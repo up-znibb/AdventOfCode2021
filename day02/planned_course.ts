@@ -1,4 +1,4 @@
-var planned_cource: string[] = [
+var planned_course: string[] = [
     "forward 5",
     "forward 1",
     "forward 3",
@@ -1000,4 +1000,4 @@ var planned_cource: string[] = [
     "down 6",
     "forward 8"
 ];
-export { planned_cource }
+export { planned_course }

@@ -5,7 +5,7 @@ Day 2, part 1 & 2
 Emil Malm
 https://github.com/up-znibb/AdventOfCode2021
 */
-import * as course from './planned_course';
+import { planned_course } from './planned_course';
 
 const test: string[] = [
     "forward 5",
@@ -23,28 +23,24 @@ let x: number = 0;
 let y: number = 0;
 
 function getNumberFromInstruction(input: string, replaceString: string): number {
-    let temp: string;
-    temp = input.replace(replaceString, '');
-    temp.trim();
-
-    return parseInt(temp);
+    return parseInt(input.replace(replaceString, '').trim());
 }
 
 function multiplyXandY(arr: string[]): number {
     arr.forEach(instruction => {
         if (instruction.includes("forward")) {
-            x += getNumberFromInstruction(instruction, 'forward');
+            x += parseInt(instruction.replace('forward', '').trim());
         } else if (instruction.includes("down")) {
-            y += getNumberFromInstruction(instruction, 'down');
+            y += parseInt(instruction.replace('down', '').trim());
         } else if (instruction.includes("up")) {
-            y -= getNumberFromInstruction(instruction, 'up');
+            y -= parseInt(instruction.replace('up', '').trim());
         }
     });
 
     return x * y;
 }
 
-console.log(multiplyXandY(course.planned_cource));
+console.log(multiplyXandY(planned_course));
 
 /*
 ### PART 2 ###
@@ -57,16 +53,16 @@ let depth: number = 0;
 function multiplyXandYWithDepth(arr: string[]): number {
     arr.forEach(instruction => {
         if (instruction.includes("forward")) {
-            x += getNumberFromInstruction(instruction, 'forward');
-            depth += y * getNumberFromInstruction(instruction, 'forward');
+            x += parseInt(instruction.replace('forward', '').trim());
+            depth += y * parseInt(instruction.replace('forward', '').trim());
         } else if (instruction.includes("down")) {
-            y += getNumberFromInstruction(instruction, 'down');
+            y += parseInt(instruction.replace('down', '').trim());
         } else if (instruction.includes("up")) {
-            y -= getNumberFromInstruction(instruction, 'up');
+            y -= parseInt(instruction.replace('up', '').trim());
         }
     });
 
-    return x * depth
+    return x * depth;
 }
 
-console.log(multiplyXandYWithDepth(course.planned_cource));
+console.log(multiplyXandYWithDepth(planned_course));

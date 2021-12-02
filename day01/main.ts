@@ -5,7 +5,7 @@ Day 1, part 1 & 2
 Emil Malm
 https://github.com/up-znibb/AdventOfCode2021
 */
-import * as sonar from './sonar_input';
+import { sonar_input } from './sonar_input';
 
 const test: number[] = [
     199,
@@ -38,7 +38,7 @@ function calculateLargerMeasurements(arr: number[]): number {
     return largerMeasuremetns;
 }
 
-console.log(calculateLargerMeasurements(sonar.sonar_input));
+console.log(calculateLargerMeasurements(sonar_input));
 
 
 /*
@@ -49,7 +49,7 @@ let n2: number = 0;
 let n3: number = 0;
 let newSonarInput: number[] = [];
 
-sonar.sonar_input.forEach(input => {
+sonar_input.forEach((input: number) => {
     let sum: number = 0;
     if (!isNaN(n1)) {
         n1 = input;
