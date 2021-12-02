@@ -22,10 +22,6 @@ const test: string[] = [
 let x: number = 0;
 let y: number = 0;
 
-function getNumberFromInstruction(input: string, replaceString: string): number {
-    return parseInt(input.replace(replaceString, '').trim());
-}
-
 function multiplyXandY(arr: string[]): number {
     arr.forEach(instruction => {
         if (instruction.includes("forward")) {
