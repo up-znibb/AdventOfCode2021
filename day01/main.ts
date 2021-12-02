@@ -7,7 +7,7 @@ https://github.com/up-znibb/AdventOfCode2021
 */
 import * as sonar from './sonar_input';
 
-const test = [
+const test: number[] = [
     199,
     200,
     208,
@@ -24,10 +24,10 @@ const test = [
 ### PART 1 ###
 */
 
-function calculateLargerMeasurements(arr): number {
+function calculateLargerMeasurements(arr: number[]): number {
     let largerMeasuremetns: number = 0;
     let lastInput: number;
-    arr.forEach(input => {
+    arr.forEach((input: number) => {
         if (lastInput < input) {
             largerMeasuremetns++;
         }
