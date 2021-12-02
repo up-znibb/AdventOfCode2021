@@ -1998,8 +1998,7 @@ var sonar_input = [
     5058,
     5063,
     5067,
-    5068,
-    0
+    5068
 ];
 
 export { sonar_input };

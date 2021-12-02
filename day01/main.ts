@@ -1,9 +1,9 @@
 /*
-Ska krypa till korset och säga att jag fuskade på denna.
-Då jag sätter n1 det sista jag gör i loopen på part 2 så räkna den inte med det sista numret.
-Så då la jag bara till en 0:a i input-datan så räknar den rätt. För då är sista n1 0 och då har den räknat med det tidigare sista numret.
-Kanska hade varit bättre att skapa en funktion som räknar ut summan av tre nummer istället och kört funktionen för varje iteration.
-Får se om jag får tid att lösa det vid ett senare tillfälle :D
+Advent of Code 2021
+Day 1, part 1 & 2
+2021-12-01
+Emil Malm
+https://github.com/up-znibb/AdventOfCode2021
 */
 import * as sonar from './sonar_input';
 
@@ -44,14 +44,17 @@ console.log(calculateLargerMeasurements(sonar.sonar_input));
 /*
 ### PART 2 ###
 */
-
-
 let n1: number;
 let n2: number = 0;
 let n3: number = 0;
 let newSonarInput: number[] = [];
+
 sonar.sonar_input.forEach(input => {
-    let sum = n1 + n2 + n3;
+    let sum: number = 0;
+    if (!isNaN(n1)) {
+        n1 = input;
+        sum = n1 + n2 + n3;
+    }
     if (!isNaN(sum)) {
         newSonarInput.push(sum);
     }
